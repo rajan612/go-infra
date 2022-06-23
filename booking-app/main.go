@@ -24,7 +24,7 @@ func main() {
 		fmt.Println("what is your first name?")
 		fmt.Scan(&firstName)
 
-		fmt.Println("what is your flast name?")
+		fmt.Println("what is your last name?")
 		fmt.Scan(&lastName)
 
 		fmt.Println("what is your email?")
@@ -34,7 +34,7 @@ func main() {
 		fmt.Scan(&userTickets)
 
 		isValidName := len(firstName) >= 2 && len(lastName) >= 2
-		isValidEmail := strings.Contains(email, "a")
+		isValidEmail := strings.Contains(email, "@")
 		isValidTicketNumber := userTickets > 0 && userTickets <= remainingTickets
 
 		if isValidName && isValidEmail && isValidTicketNumber {
@@ -56,6 +56,15 @@ func main() {
 				break
 			}
 		} else {
+			if !isValidName {
+				fmt.Println("First name or last name you entered is to short")
+			}
+			if !isValidEmail {
+				fmt.Println("The email address you entered does not contains @ sign")
+			}
+			if !isValidTicketNumber {
+				fmt.Println("The number of tickets you entered is invalid")
+			}
 			fmt.Println("Your input data is invalid, try again\n")
 		}
 	}
