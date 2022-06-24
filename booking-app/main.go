@@ -8,11 +8,11 @@ import (
 func main() {
 
 	conferenceName := "Goooooooo Conference 🍻"
-	const conferenceTickets int = 50
+	const conferenceTickets uint = 50
 	var remainingTickets uint = 50
 	bookings := []string{}
 
-	fmt.Printf("welcome to the our %v Booking Application. \nWe have total of %v tickets and %v are the remaining tickets.\nGet your tickets here to attend  🍻🍻\n ", conferenceName, conferenceTickets, remainingTickets)
+	greetUsers(conferenceName, conferenceTickets, remainingTickets)
 
 	for {
 		var firstName string
@@ -68,5 +68,8 @@ func main() {
 			fmt.Println("Your input data is invalid, try again\n")
 		}
 	}
+}
+func greetUsers(confName string, conferenceTickets uint, remainingTickets uint) {
+	fmt.Printf("welcome to the our %v Booking Application. \nWe have total of %v tickets and %v are the remaining tickets.\nGet your tickets here to attend  🍻🍻\n", confName, conferenceTickets, remainingTickets)
 
 }
